@@ -22,12 +22,11 @@ export const translations = {
     },
     expertise: {
       eyebrow: "Ce qu'on fait",
-      title: "Une expertise technique, pas un catalogue de buzzwords.",
+      title: "L'expertise avant le discours.",
       cards: [
         { title: "Intelligence Artificielle", text: "Systèmes d'apprentissage automatique adaptés à vos données et vos processus — pas des solutions génériques." },
         { title: "Data Science & Analytics", text: "Extraction d'insights à partir de vos données brutes. Tableaux de bord, modèles prédictifs, pipelines de données." },
         { title: "Développement Logiciel", text: "Applications web, APIs, outils internes. Du code maintenable, testé et déployé — pas des maquettes." },
-        { title: "Hyper Automatisation", text: "Élimination des tâches répétitives par la combinaison d'IA, de RPA et d'intégrations entre vos outils." },
         { title: "Chatbots & Assistants", text: "Agents conversationnels pour le support client, la qualification de leads ou les processus internes 24h/24." },
       ],
     },
@@ -123,12 +122,11 @@ export const translations = {
     },
     expertise: {
       eyebrow: "What we do",
-      title: "Technical expertise, not a buzzword catalog.",
+      title: "Expertise before the pitch.",
       cards: [
         { title: "Artificial Intelligence", text: "Machine learning systems tailored to your data and processes — not generic solutions." },
         { title: "Data Science & Analytics", text: "Extracting insights from your raw data. Dashboards, predictive models, data pipelines." },
         { title: "Software Development", text: "Web apps, APIs, internal tools. Maintainable, tested and deployed code — not mockups." },
-        { title: "Hyper Automation", text: "Eliminating repetitive tasks through the combination of AI, RPA and integrations between your tools." },
         { title: "Chatbots & Assistants", text: "Conversational agents for customer support, lead qualification or internal processes 24/7." },
       ],
     },
