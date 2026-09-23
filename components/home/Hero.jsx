@@ -51,7 +51,7 @@ export default function Hero() {
               <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28, color: "var(--accent)" }}>
                 {h.eyebrow}
               </p>
-              <h1 style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
+              <h1 className="hero-title" style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
                 {h.title}
               </h1>
               <p style={{ fontSize: 15, maxWidth: 440, lineHeight: 1.65, color: "var(--fg-2)" }}>
