@@ -3,15 +3,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-
-const links = [
-  { label: "Expertise", href: "#expertise" },
-  { label: "Produits", href: "#produit" },
-  { label: "FAQ", href: "#faq" },
-];
+import { useLang } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t } = useLang();
+  const n = t.nav;
+
+  const links = [
+    { label: n.expertise, href: "#expertise" },
+    { label: n.products, href: "#produit" },
+    { label: n.faq, href: "#faq" },
+  ];
 
   return (
     <header style={{
@@ -44,13 +47,13 @@ export default function Navbar() {
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
           >
-            Contact
+            {n.contact}
           </a>
           <a href="https://console.nexiumai.io" target="_blank" rel="noopener noreferrer"
             className="btn-slide-fill"
             style={{ fontSize: 13, fontWeight: 600, padding: "7px 16px", borderRadius: 6, textDecoration: "none" }}
           >
-            Commencer gratuitement →
+            {n.cta}
           </a>
         </div>
 
@@ -68,7 +71,7 @@ export default function Navbar() {
             className="btn-slide-fill"
             style={{ fontSize: 13, fontWeight: 600, padding: "10px 20px", borderRadius: 6, textAlign: "center", textDecoration: "none" }}
           >
-            Commencer gratuitement →
+            {n.cta}
           </a>
         </div>
       )}

@@ -2,17 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLang } from "@/context/LanguageContext";
 
-const cards = [
-  { title: "Intelligence Artificielle", text: "Systèmes d'apprentissage automatique adaptés à vos données et vos processus — pas des solutions génériques.", icon: "/assets/ia.png" },
-  { title: "Data Science & Analytics", text: "Extraction d'insights à partir de vos données brutes. Tableaux de bord, modèles prédictifs, pipelines de données.", icon: "/assets/cerveau.png" },
-  { title: "Développement Logiciel", text: "Applications web, APIs, outils internes. Du code maintenable, testé et déployé — pas des maquettes.", icon: "/assets/dev.png" },
-  { title: "Hyper Automatisation", text: "Élimination des tâches répétitives par la combinaison d'IA, de RPA et d'intégrations entre vos outils.", icon: "/assets/automation.png" },
-  { title: "Chatbots & Assistants", text: "Agents conversationnels pour le support client, la qualification de leads ou les processus internes 24h/24.", icon: "/assets/chatbot.png" },
-];
-
+const ICONS = ["/assets/ia.png", "/assets/cerveau.png", "/assets/dev.png", "/assets/automation.png", "/assets/chatbot.png"];
 const COLS = 3;
-const TOTAL_ROWS = Math.ceil(cards.length / COLS);
+const TOTAL_ROWS = Math.ceil(5 / COLS);
 
 function Card({ title, text, icon, index, inView, noRight, noBottom }) {
   return (
@@ -43,12 +37,14 @@ function Card({ title, text, icon, index, inView, noRight, noBottom }) {
 export default function Expertise() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
+  const { t } = useLang();
+  const e = t.expertise;
+  const cards = e.cards.map((c, i) => ({ ...c, icon: ICONS[i] }));
 
   return (
     <section id="expertise" ref={ref} style={{ position: "relative", background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
-        {/* Header row */}
         <motion.div
           className="sec-head"
           style={{ padding: "64px 48px 48px", borderBottom: "1px solid var(--border)" }}
@@ -57,18 +53,14 @@ export default function Expertise() {
           transition={{ duration: 0.5 }}
         >
           <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, color: "var(--accent)" }}>
-            Ce qu'on fait
+            {e.eyebrow}
           </p>
           <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 700, color: "var(--fg)", maxWidth: 520, lineHeight: 1.15, letterSpacing: "-0.025em", margin: 0 }}>
-            Une expertise technique, pas un catalogue de buzzwords.
+            {e.title}
           </h2>
         </motion.div>
 
-        {/* Desktop — grille 3 colonnes unifiée */}
-        <div
-          style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)` }}
-          className="hidden md:grid"
-        >
+        <div style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)` }} className="hidden md:grid">
           {cards.map((c, i) => {
             const col = i % COLS;
             const row = Math.floor(i / COLS);
@@ -76,11 +68,7 @@ export default function Expertise() {
             const isLastInRow = i === cards.length - 1 && !isLastCol;
             const isLastRow = row === TOTAL_ROWS - 1;
             return (
-              <Card
-                key={c.title}
-                {...c}
-                index={i}
-                inView={inView}
+              <Card key={c.title} {...c} index={i} inView={inView}
                 noRight={isLastCol || isLastInRow}
                 noBottom={isLastRow}
               />
@@ -88,17 +76,9 @@ export default function Expertise() {
           })}
         </div>
 
-        {/* Mobile — colonne simple */}
         <div className="md:hidden">
           {cards.map((c, i) => (
-            <Card
-              key={c.title}
-              {...c}
-              index={i}
-              inView={inView}
-              noRight={true}
-              noBottom={i === cards.length - 1}
-            />
+            <Card key={c.title} {...c} index={i} inView={inView} noRight={true} noBottom={i === cards.length - 1} />
           ))}
         </div>
 
