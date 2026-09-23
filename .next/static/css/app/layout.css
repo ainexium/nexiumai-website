@@ -350,9 +350,9 @@ html[data-theme="light"] {
 .btn-slide-fill-outline::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: 0 0 0 -2px;
   background: var(--accent);
-  transform: translateX(-100%);
+  transform: translateX(calc(-100% - 2px));
   transition: transform 0.35s ease;
 }
 .btn-slide-fill-outline:hover::before {

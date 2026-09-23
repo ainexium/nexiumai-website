@@ -72,7 +72,7 @@ export default function Hero() {
                 {h.ctaPrimary} <span>›</span>
               </a>
               <a href="mailto:ai.nexium@gmail.com" className="btn-slide-fill-outline"
-                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 13, fontWeight: 500, textDecoration: "none", position: "relative", zIndex: 0 }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 13, fontWeight: 500, textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
                   {h.ctaSecondary} <span>›</span>
