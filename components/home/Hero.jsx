@@ -61,7 +61,9 @@ export default function Hero() {
         flexDirection: "column",
       }}
     >
+      <div className="glow-ambiant" />
       <div className="grid-overlay" style={{ backgroundPositionY: "4px" }} />
+      <div className="noise-overlay" />
       <div style={{ height: 60, flexShrink: 0 }} />
 
       <div
@@ -90,11 +92,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28, color: "var(--accent)" }}>
+              <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28, color: "var(--accent)" }}>
                 {h.eyebrow}
               </p>
 
-              <h1 className="hero-title" style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 500, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
+              <h1 className="hero-title" style={{ fontSize: "clamp(2.2rem, 5vw, 3.6rem)", fontWeight: 500, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
                 {h.titlePrefix}{" "}
                 <span style={{ whiteSpace: "nowrap" }}>
                   <span style={{ color: "var(--accent)" }}>
@@ -115,7 +117,7 @@ export default function Hero() {
                 {h.titleSuffix}
               </h1>
 
-              <p style={{ fontSize: 15, maxWidth: 440, lineHeight: 1.65, color: "var(--fg-2)" }}>
+              <p style={{ fontSize: 17, maxWidth: 440, lineHeight: 1.65, color: "var(--fg-2)" }}>
                 {h.description}
               </p>
             </motion.div>
@@ -128,12 +130,12 @@ export default function Hero() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               <a href="#produit" className="btn-slide-fill"
-                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 13, fontWeight: 600, textDecoration: "none" }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 14, fontWeight: 600, textDecoration: "none" }}
               >
                 {h.ctaPrimary} <span>›</span>
               </a>
               <a href="mailto:ai.nexium@gmail.com" className="btn-slide-fill-outline"
-                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 13, fontWeight: 500, textDecoration: "none" }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "13px 18px", borderRadius: 6, fontSize: 14, fontWeight: 500, textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
                   {h.ctaSecondary} <span>›</span>
@@ -142,22 +144,22 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <motion.div
+          <div
             className="hero-stats"
             style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderTop: "1px solid var(--border)" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.45, duration: 0.5 }}
           >
             {h.stats.map((s, i) => (
-              <div key={s.label} className={`hero-stat-${i}`}
+              <motion.div key={s.label} className={`hero-stat-${i}`}
                 style={{ padding: "24px 24px", borderRight: i < 3 ? "1px solid var(--border)" : "none" }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.09, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p style={{ fontSize: 18, fontWeight: 600, color: "var(--fg)", margin: 0, letterSpacing: "-0.02em" }}>{s.value}</p>
-                <p style={{ fontSize: 11, color: "var(--fg-3)", margin: "3px 0 0" }}>{s.label}</p>
-              </div>
+                <p style={{ fontSize: 20, fontWeight: 600, color: "var(--fg)", margin: 0, letterSpacing: "-0.02em" }}>{s.value}</p>
+                <p style={{ fontSize: 12, color: "var(--fg-3)", margin: "3px 0 0" }}>{s.label}</p>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

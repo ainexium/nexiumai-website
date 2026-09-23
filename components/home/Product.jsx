@@ -24,10 +24,10 @@ export default function Product() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, color: "var(--blue)" }}>
+          <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, color: "var(--blue)" }}>
             {p.eyebrow}
           </p>
-          <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 500, color: "var(--fg)", lineHeight: 1.15, letterSpacing: "-0.025em", margin: 0 }}>
+          <h2 style={{ fontSize: "clamp(1.9rem, 4vw, 2.6rem)", fontWeight: 500, color: "var(--fg)", lineHeight: 1.15, letterSpacing: "-0.025em", margin: 0 }}>
             {p.title}
           </h2>
         </motion.div>
@@ -40,32 +40,37 @@ export default function Product() {
           transition={{ duration: 0.55, delay: 0.1 }}
         >
           <div className="product-left" style={{ padding: "48px", borderRight: "1px solid var(--border)" }}>
-            <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 99, marginBottom: 20, background: "var(--tag-bg)", color: "var(--tag-fg)", border: "1px solid var(--tag-border)" }}>
+            <span style={{ display: "inline-block", fontSize: 12, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 99, marginBottom: 20, background: "var(--tag-bg)", color: "var(--tag-fg)", border: "1px solid var(--tag-border)" }}>
               {p.tag}
             </span>
-            <h3 className="product-h3" style={{ fontSize: 20, fontWeight: 500, color: "var(--fg)", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{p.name}</h3>
-            <p className="product-desc" style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.7, marginBottom: 28 }}>{p.description}</p>
+            <h3 className="product-h3" style={{ fontSize: 22, fontWeight: 500, color: "var(--fg)", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{p.name}</h3>
+            <p className="product-desc" style={{ fontSize: 14, color: "var(--fg-2)", lineHeight: 1.7, marginBottom: 28 }}>{p.description}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
-              {p.features.map(({ label, desc }) => (
-                <li key={label} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              {p.features.map(({ label, desc }, i) => (
+                <motion.li key={label}
+                  style={{ display: "flex", alignItems: "flex-start", gap: 12 }}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.38, delay: 0.3 + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                >
                   <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--blue)", marginTop: 6, flexShrink: 0 }} />
                   <div>
-                    <p className="product-feature-label" style={{ fontSize: 13, fontWeight: 500, color: "var(--fg)", margin: 0 }}>{label}</p>
-                    <p className="product-feature-desc" style={{ fontSize: 12, color: "var(--fg-2)", margin: "2px 0 0" }}>{desc}</p>
+                    <p className="product-feature-label" style={{ fontSize: 14, fontWeight: 500, color: "var(--fg)", margin: 0 }}>{label}</p>
+                    <p className="product-feature-desc" style={{ fontSize: 13, color: "var(--fg-2)", margin: "2px 0 0" }}>{desc}</p>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               <a href="https://console.nexiumai.io" target="_blank" rel="noopener noreferrer"
                 className="btn-slide-accent"
-                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 600, color: "#fff", background: "var(--blue)", textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", borderRadius: 6, fontSize: 14, fontWeight: 600, color: "#fff", background: "var(--blue)", textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1, display: "inline-flex", alignItems: "center", gap: 6 }}>{p.ctaPrimary}</span>
               </a>
               <a href="https://console.nexiumai.io/docs" target="_blank" rel="noopener noreferrer"
                 className="btn-slide-contrast"
-                style={{ display: "inline-flex", alignItems: "center", padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 500, textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", padding: "9px 20px", borderRadius: 6, fontSize: 14, fontWeight: 500, textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1 }}>{p.ctaSecondary}</span>
               </a>
@@ -77,9 +82,9 @@ export default function Product() {
               <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f57" }} />
               <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#febc2e" }} />
               <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#28c840" }} />
-              <span style={{ marginLeft: 10, fontSize: 11, color: "rgba(255,255,255,0.2)", fontFamily: "var(--font-roobert-mono), monospace" }}>terminal</span>
+              <span style={{ marginLeft: 10, fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: "var(--font-roobert-mono), monospace" }}>terminal</span>
             </div>
-            <div className="product-terminal" style={{ flex: 1, padding: "24px", fontFamily: "var(--font-roobert-mono), monospace", fontSize: 12, lineHeight: 1.9, overflow: "hidden" }}>
+            <div className="product-terminal" style={{ flex: 1, padding: "24px", fontFamily: "var(--font-roobert-mono), monospace", fontSize: 13, lineHeight: 1.9, overflow: "hidden" }}>
               {p.terminalLines.map((line, i) => (
                 <motion.div key={i} style={{ color: line.c }}
                   initial={{ opacity: 0, x: -6 }}
@@ -101,13 +106,13 @@ export default function Product() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.75 }}
         >
-          <span style={{ fontSize: 12, color: "var(--fg-3)" }}>{p.sdkLabel}</span>
+          <span style={{ fontSize: 13, color: "var(--fg-3)" }}>{p.sdkLabel}</span>
           {[
             { label: "npm install @ainexium/storage", href: "https://www.npmjs.com/package/@ainexium/storage" },
             { label: "pip install nexium-storage", href: "https://pypi.org/project/nexium-storage/" },
           ].map((sdk) => (
             <a key={sdk.label} href={sdk.href} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", padding: "4px 12px", borderRadius: 4, fontFamily: "var(--font-roobert-mono), monospace", fontSize: 12, color: "var(--fg-2)", border: "1px solid var(--border)", background: "transparent", textDecoration: "none", transition: "border-color 0.15s, color 0.15s" }}
+              style={{ display: "inline-flex", alignItems: "center", padding: "4px 12px", borderRadius: 4, fontFamily: "var(--font-roobert-mono), monospace", fontSize: 13, color: "var(--fg-2)", border: "1px solid var(--border)", background: "transparent", textDecoration: "none", transition: "border-color 0.15s, color 0.15s" }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-strong)"; e.currentTarget.style.color = "var(--fg)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--fg-2)"; }}
             >
@@ -126,7 +131,7 @@ export default function Product() {
           >
             {p.upcoming.map((u, i) => (
               <div key={u.name} style={{ padding: "40px 48px", borderRight: i === 0 ? "1px solid var(--border)" : "none", opacity: 0.5 }}>
-                <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 99, marginBottom: 20, background: "var(--tag-bg)", color: "var(--tag-fg)", border: "1px solid var(--tag-border)" }}>
+                <span style={{ display: "inline-block", fontSize: 12, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 99, marginBottom: 20, background: "var(--tag-bg)", color: "var(--tag-fg)", border: "1px solid var(--tag-border)" }}>
                   {u.tag}
                 </span>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--fg)", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{u.name}</h3>

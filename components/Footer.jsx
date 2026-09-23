@@ -55,11 +55,13 @@ export default function Footer() {
 
   return (
     <footer ref={ref} style={{ background: "var(--bg)", position: "relative", overflow: "hidden" }}>
+      <div className="glow-footer" />
       <div className="grid-overlay" />
+      <div className="noise-overlay" />
 
       <div className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "#141414", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
-        <motion.div
+          <motion.div
           className="footer-cta-grid"
           style={{ display: "grid", gridTemplateColumns: "1fr 260px", borderTop: `1px solid ${B}`, borderBottom: `1px solid ${B}` }}
           initial={{ opacity: 0, y: 16 }}
@@ -67,25 +69,25 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <div className="footer-cta-text" style={{ padding: "80px 48px 72px", background: "#141414", borderRight: `1px solid ${B}` }}>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 18, color: "rgba(155,61,255,0.65)" }}>
+            <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 18, color: "rgba(155,61,255,0.65)" }}>
               {f.cta.eyebrow}
             </p>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 500, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
+            <h2 style={{ fontSize: "clamp(2.1rem, 5vw, 3.2rem)", fontWeight: 500, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
               {f.cta.title}
             </h2>
-            <p style={{ fontSize: 14, color: M, maxWidth: 380, marginBottom: 36, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 15, color: M, maxWidth: 380, marginBottom: 36, lineHeight: 1.6 }}>
               {f.cta.description}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
               <a href="mailto:ai.nexium@gmail.com"
                 className="btn-slide-accent"
-                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 600, color: "#141414", background: "#fff", textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 15, fontWeight: 600, color: "#141414", background: "#fff", textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1 }}>{f.cta.emailBtn}</span>
               </a>
               <a href="https://wa.me/message/DWFX6PYDHERII1" target="_blank" rel="noopener noreferrer"
                 className="btn-slide-white"
-                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 500, textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 15, fontWeight: 500, textDecoration: "none" }}
               >
                 <span style={{ position: "relative", zIndex: 1 }}>{f.cta.whatsappBtn}</span>
               </a>
@@ -104,10 +106,10 @@ export default function Footer() {
         >
           <div className="footer-brand" style={{ padding: "40px 48px", borderRight: `1px solid ${B}` }}>
             <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 12 }}>
-              <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={24} height={24} />
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em" }}>NEXIUM.AI</span>
+              <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={32} height={32} />
+              <span style={{ fontSize: 14, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em" }}>NEXIUM.AI</span>
             </div>
-            <p style={{ fontSize: 12, marginBottom: 20, color: F, lineHeight: 1.55 }}>{f.tagline}</p>
+            <p style={{ fontSize: 13, marginBottom: 20, color: F, lineHeight: 1.55 }}>{f.tagline}</p>
             <div style={{ display: "flex", gap: 7 }}>
               {social.map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name}
@@ -127,14 +129,14 @@ export default function Footer() {
             { title: f.contactTitle, links: [{ label: "ai.nexium@gmail.com", href: "mailto:ai.nexium@gmail.com" }, { label: "WhatsApp", href: "https://wa.me/message/DWFX6PYDHERII1", external: true }] },
           ].map((col, ci) => (
             <div key={col.title} className="footer-link-col" style={{ padding: "40px 32px", borderRight: ci < 2 ? `1px solid ${B}` : "none" }}>
-              <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18, color: F }}>
+              <p style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18, color: F }}>
                 {col.title}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <a href={l.href} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      style={{ fontSize: 12, color: M, textDecoration: "none", transition: "color 0.15s" }}
+                      style={{ fontSize: 13, color: M, textDecoration: "none", transition: "color 0.15s" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = M)}
                     >
@@ -151,20 +153,20 @@ export default function Footer() {
 
       {/* Barre basse — copyright + switcher de langue */}
       <div className="footer-bottom sect-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "20px 48px", position: "relative", zIndex: 1, borderTop: "1px solid var(--border)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <p style={{ fontSize: 11, color: "var(--fg-3)", margin: 0 }}>{f.copyright}</p>
+        <p style={{ fontSize: 12, color: "var(--fg-3)", margin: 0 }}>{f.copyright}</p>
 
         {/* Switcher FR | EN */}
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           {["fr", "en"].map((l, i) => (
             <span key={l} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              {i > 0 && <span style={{ color: "var(--fg-3)", fontSize: 11, userSelect: "none" }}>|</span>}
+              {i > 0 && <span style={{ color: "var(--fg-3)", fontSize: 12, userSelect: "none" }}>|</span>}
               <button
                 onClick={() => setLang(l)}
                 style={{
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: lang === l ? 700 : 400,
                   color: lang === l ? "var(--fg)" : "var(--fg-3)",
                   padding: 0,

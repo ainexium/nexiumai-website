@@ -649,7 +649,7 @@ html[data-theme="light"] {
     padding-right: calc((100vw - 1100px) / 2) !important;
   }
   .hero-title {
-    font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+    font-size: clamp(2.1rem, 4.5vw, 3.2rem) !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1151px) {
@@ -657,8 +657,47 @@ html[data-theme="light"] {
     padding: 0 36px !important;
   }
   .hero-title {
-    font-size: clamp(1.6rem, 3.8vw, 2.4rem) !important;
+    font-size: clamp(1.9rem, 4.2vw, 2.8rem) !important;
   }
+}
+:root {
+  --glow-primary: rgba(106, 13, 173, 0.14);
+  --glow-secondary: rgba(106, 13, 173, 0.06);
+}
+html[data-theme="dark"] {
+  --glow-primary: rgba(155, 61, 255, 0.22);
+  --glow-secondary: rgba(155, 61, 255, 0.09);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --glow-primary: rgba(155, 61, 255, 0.22);
+    --glow-secondary: rgba(155, 61, 255, 0.09);
+  }
+}
+.glow-ambiant {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 75% 65% at 18% 88%, var(--glow-primary) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 80% 10%, var(--glow-secondary) 0%, transparent 60%);
+}
+.glow-footer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 90% 70% at 50% 115%, rgba(155, 61, 255, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 45% at 8% 25%, rgba(155, 61, 255, 0.09) 0%, transparent 55%);
+}
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
 }
 @media (min-width: 1440px) {
   .theme-toggle-btn {
@@ -673,10 +712,10 @@ html[data-theme="light"] {
     padding-right: calc((100vw - 1200px) / 2) !important;
   }
   .hero-title {
-    font-size: clamp(2.5rem, 5.5vw, 4rem) !important;
+    font-size: clamp(2.9rem, 6vw, 4.6rem) !important;
   }
   .sec-head h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.6rem) !important;
+    font-size: clamp(2.2rem, 4vw, 3rem) !important;
   }
   .expertise-icon-wrap {
     width: 46px !important;

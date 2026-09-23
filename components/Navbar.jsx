@@ -25,14 +25,14 @@ export default function Navbar() {
     }}>
       <nav className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "0 2.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", flexShrink: 0 }}>
-          <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={28} height={28} />
-          <span style={{ fontWeight: 700, fontSize: 13, letterSpacing: "-0.01em", color: "var(--fg)" }}>NEXIUM.AI</span>
+          <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={34} height={34} />
+          <span style={{ fontWeight: 700, fontSize: 14, letterSpacing: "-0.01em", color: "var(--fg)" }}>NEXIUM.AI</span>
         </Link>
 
         <div style={{ alignItems: "center", gap: 32 }} className="nav-desktop hidden md:flex">
           {links.map((l) => (
             <a key={l.href} href={l.href}
-              style={{ fontSize: 13, fontWeight: 400, color: "var(--fg-2)", transition: "color 0.15s", textDecoration: "none" }}
+              style={{ fontSize: 14, fontWeight: 400, color: "var(--fg-2)", transition: "color 0.15s", textDecoration: "none" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
             >
@@ -43,7 +43,7 @@ export default function Navbar() {
 
         <div style={{ alignItems: "center", gap: 10 }} className="nav-desktop hidden md:flex">
           <a href="mailto:ai.nexium@gmail.com"
-            style={{ fontSize: 13, fontWeight: 400, color: "var(--fg-2)", textDecoration: "none", transition: "color 0.15s" }}
+            style={{ fontSize: 14, fontWeight: 400, color: "var(--fg-2)", textDecoration: "none", transition: "color 0.15s" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
           >
@@ -51,7 +51,7 @@ export default function Navbar() {
           </a>
           <a href="https://console.nexiumai.io" target="_blank" rel="noopener noreferrer"
             className="btn-slide-fill"
-            style={{ fontSize: 13, fontWeight: 600, padding: "7px 16px", borderRadius: 6, textDecoration: "none" }}
+            style={{ fontSize: 14, fontWeight: 600, padding: "7px 16px", borderRadius: 6, textDecoration: "none" }}
           >
             {n.cta}
           </a>
@@ -65,11 +65,11 @@ export default function Navbar() {
       {open && (
         <div style={{ background: "var(--bg)", borderTop: "1px solid var(--border)", padding: "20px 24px", display: "flex", flexDirection: "column", gap: 16 }} className="md:hidden">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} style={{ fontSize: 14, color: "var(--fg-2)", textDecoration: "none" }}>{l.label}</a>
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} style={{ fontSize: 15, color: "var(--fg-2)", textDecoration: "none" }}>{l.label}</a>
           ))}
           <a href="https://console.nexiumai.io" target="_blank" rel="noopener noreferrer"
             className="btn-slide-fill"
-            style={{ fontSize: 13, fontWeight: 600, padding: "10px 20px", borderRadius: 6, textAlign: "center", textDecoration: "none" }}
+            style={{ fontSize: 14, fontWeight: 600, padding: "10px 20px", borderRadius: 6, textAlign: "center", textDecoration: "none" }}
           >
             {n.cta}
           </a>
