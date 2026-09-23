@@ -43,15 +43,15 @@ export default function Product() {
             <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 99, marginBottom: 20, background: "var(--tag-bg)", color: "var(--tag-fg)", border: "1px solid var(--tag-border)" }}>
               {p.tag}
             </span>
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: "var(--fg)", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{p.name}</h3>
-            <p style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.7, marginBottom: 28 }}>{p.description}</p>
+            <h3 className="product-h3" style={{ fontSize: 20, fontWeight: 700, color: "var(--fg)", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{p.name}</h3>
+            <p className="product-desc" style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.7, marginBottom: 28 }}>{p.description}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
               {p.features.map(({ label, desc }) => (
                 <li key={label} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                   <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--blue)", marginTop: 6, flexShrink: 0 }} />
                   <div>
-                    <p style={{ fontSize: 13, fontWeight: 500, color: "var(--fg)", margin: 0 }}>{label}</p>
-                    <p style={{ fontSize: 12, color: "var(--fg-2)", margin: "2px 0 0" }}>{desc}</p>
+                    <p className="product-feature-label" style={{ fontSize: 13, fontWeight: 500, color: "var(--fg)", margin: 0 }}>{label}</p>
+                    <p className="product-feature-desc" style={{ fontSize: 12, color: "var(--fg-2)", margin: "2px 0 0" }}>{desc}</p>
                   </div>
                 </li>
               ))}
@@ -81,7 +81,7 @@ export default function Product() {
               <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#28c840" }} />
               <span style={{ marginLeft: 10, fontSize: 11, color: "rgba(255,255,255,0.2)", fontFamily: "monospace" }}>terminal</span>
             </div>
-            <div style={{ flex: 1, padding: "24px", fontFamily: "monospace", fontSize: 12, lineHeight: 1.9, overflow: "hidden" }}>
+            <div className="product-terminal" style={{ flex: 1, padding: "24px", fontFamily: "monospace", fontSize: 12, lineHeight: 1.9, overflow: "hidden" }}>
               {p.terminalLines.map((line, i) => (
                 <motion.div key={i} style={{ color: line.c }}
                   initial={{ opacity: 0, x: -6 }}

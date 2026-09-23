@@ -219,3 +219,12 @@ html[data-theme="light"] {
   .footer-link-col { padding: 24px 20px !important; border-right: none !important; }
   .footer-bottom { padding: 16px 20px !important; }
 }
+
+@media (min-width: 1440px) {
+  .theme-toggle-btn { width: 40px !important; height: 40px !important; }
+  .product-h3 { font-size: 22px !important; }
+  .product-desc { font-size: 15px !important; }
+  .product-feature-label { font-size: 15px !important; }
+  .product-feature-desc { font-size: 13px !important; }
+  .product-terminal { font-size: 13px !important; }
+}

@@ -23,6 +23,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+      className="theme-toggle-btn"
       style={{
         position: "fixed",
         bottom: 20,
