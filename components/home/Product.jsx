@@ -15,7 +15,7 @@ export default function Product() {
   return (
     <section id="produit" ref={ref} style={{ position: "relative", background: "var(--bg-section)" }}>
       <div className="grid-overlay" />
-      <div style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg-section)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
+      <div className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg-section)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
         <motion.div
           className="sec-head"
@@ -58,18 +58,16 @@ export default function Product() {
             </ul>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               <a href="https://console.nexiumai.io" target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 600, color: "#fff", background: "var(--blue)", textDecoration: "none", transition: "background 0.15s, transform 0.15s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "var(--blue-h)"; e.currentTarget.style.transform = "translateY(-1px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "var(--blue)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                className="btn-slide-accent"
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 600, color: "#fff", background: "var(--blue)", textDecoration: "none" }}
               >
-                {p.ctaPrimary}
+                <span style={{ position: "relative", zIndex: 1, display: "inline-flex", alignItems: "center", gap: 6 }}>{p.ctaPrimary}</span>
               </a>
               <a href="https://console.nexiumai.io/docs" target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 500, color: "var(--fg-2)", border: "1px solid var(--border)", background: "transparent", textDecoration: "none", transition: "border-color 0.15s, color 0.15s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-strong)"; e.currentTarget.style.color = "var(--fg)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--fg-2)"; }}
+                className="btn-slide-contrast"
+                style={{ display: "inline-flex", alignItems: "center", padding: "9px 20px", borderRadius: 6, fontSize: 13, fontWeight: 500, textDecoration: "none" }}
               >
-                {p.ctaSecondary}
+                <span style={{ position: "relative", zIndex: 1 }}>{p.ctaSecondary}</span>
               </a>
             </div>
           </div>

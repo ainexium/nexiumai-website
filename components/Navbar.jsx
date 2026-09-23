@@ -23,7 +23,7 @@ export default function Navbar() {
       borderBottom: "1px solid var(--border)",
       transition: "background 0.2s, border-color 0.2s",
     }}>
-      <nav style={{ maxWidth: 1152, margin: "0 auto", padding: "0 2.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
+      <nav className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "0 2.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", flexShrink: 0 }}>
           <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={28} height={28} />
           <span style={{ fontWeight: 700, fontSize: 13, letterSpacing: "-0.01em", color: "var(--fg)" }}>NEXIUM.AI</span>

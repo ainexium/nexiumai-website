@@ -25,8 +25,8 @@ function Card({ title, text, icon, index, inView, noRight, noBottom }) {
       onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-card)")}
       onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
     >
-      <div style={{ width: 36, height: 36, borderRadius: 8, border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-        <img src={icon} alt={title} style={{ width: 18, height: 18, objectFit: "contain" }} />
+      <div className="expertise-icon-wrap" style={{ width: 36, height: 36, borderRadius: 8, border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+        <img className="expertise-icon" src={icon} alt={title} style={{ width: 18, height: 18, objectFit: "contain" }} />
       </div>
       <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg)", margin: "0 0 8px", letterSpacing: "-0.01em" }}>{title}</h3>
       <p style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.65, margin: 0 }}>{text}</p>
@@ -43,7 +43,7 @@ export default function Expertise() {
 
   return (
     <section id="expertise" ref={ref} style={{ position: "relative", background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
-      <div style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
+      <div className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
         <motion.div
           className="sec-head"

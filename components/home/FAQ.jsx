@@ -15,7 +15,7 @@ export default function FAQ() {
   return (
     <section id="faq" ref={ref} style={{ position: "relative", background: "var(--bg)" }}>
       <div className="grid-overlay" />
-      <div style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
+      <div className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "var(--bg)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
         <motion.div
           className="sec-head"

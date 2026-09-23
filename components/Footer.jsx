@@ -57,7 +57,7 @@ export default function Footer() {
     <footer ref={ref} style={{ background: "var(--bg)", position: "relative", overflow: "hidden" }}>
       <div className="grid-overlay" />
 
-      <div style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "#141414", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
+      <div className="sect-inner" style={{ maxWidth: 1152, margin: "0 auto", position: "relative", zIndex: 1, background: "#141414", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)" }}>
 
         <motion.div
           className="footer-cta-grid"
@@ -78,18 +78,16 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
               <a href="mailto:ai.nexium@gmail.com"
-                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 600, color: "#141414", background: "#fff", textDecoration: "none", transition: "background 0.15s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#e8e8e8")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#fff")}
+                className="btn-slide-accent"
+                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 600, color: "#141414", background: "#fff", textDecoration: "none" }}
               >
-                {f.cta.emailBtn}
+                <span style={{ position: "relative", zIndex: 1 }}>{f.cta.emailBtn}</span>
               </a>
               <a href="https://wa.me/message/DWFX6PYDHERII1" target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 500, background: "transparent", border: `1px solid ${B}`, color: M, textDecoration: "none", transition: "border-color 0.15s, color 0.15s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)"; e.currentTarget.style.color = "#fff"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = B; e.currentTarget.style.color = M; }}
+                className="btn-slide-white"
+                style={{ display: "inline-flex", alignItems: "center", padding: "12px 24px", borderRadius: 6, fontSize: 14, fontWeight: 500, textDecoration: "none" }}
               >
-                {f.cta.whatsappBtn}
+                <span style={{ position: "relative", zIndex: 1 }}>{f.cta.whatsappBtn}</span>
               </a>
             </div>
           </div>
@@ -152,7 +150,7 @@ export default function Footer() {
       </div>
 
       {/* Barre basse — copyright + switcher de langue */}
-      <div className="footer-bottom" style={{ maxWidth: 1152, margin: "0 auto", padding: "20px 48px", position: "relative", zIndex: 1, borderTop: "1px solid var(--border)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="footer-bottom sect-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "20px 48px", position: "relative", zIndex: 1, borderTop: "1px solid var(--border)", borderLeft: "1px solid var(--border)", borderRight: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <p style={{ fontSize: 11, color: "var(--fg-3)", margin: 0 }}>{f.copyright}</p>
 
         {/* Switcher FR | EN */}
