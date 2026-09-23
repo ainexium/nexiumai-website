@@ -70,7 +70,7 @@ export default function Footer() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 18, color: "rgba(155,61,255,0.65)" }}>
               {f.cta.eyebrow}
             </p>
-            <h2 className="footer-cta-title" style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 700, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 700, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
               {f.cta.title}
             </h2>
             <p style={{ fontSize: 14, color: M, maxWidth: 380, marginBottom: 36, lineHeight: 1.6 }}>
