@@ -1,4 +1,6 @@
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import "./globals.css";
 
 const SITE_URL = "https://nexiumai.io";
@@ -42,9 +44,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+            <ThemeToggle />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
