@@ -54,7 +54,7 @@ export const translations = {
         { c: "#60a5fa", t: "  https://api.nexiumai.io/v1/ext/buckets/<id>/files" },
         { c: "#6b7280", t: "" },
         { c: "#6b7280", t: "# 201 Créé" },
-        { c: "#a78bfa", t: '{ "url": "https://cdn...", "size_bytes": 148392 }' },
+        { c: "#a78bfa", t: '{ "url": "https://cdn.nexiumai.io/<bucket>/<id>/<id>_photo.jpg", ... }' },
       ],
       upcoming: [
         {
@@ -155,7 +155,7 @@ export const translations = {
         { c: "#60a5fa", t: "  https://api.nexiumai.io/v1/ext/buckets/<id>/files" },
         { c: "#6b7280", t: "" },
         { c: "#6b7280", t: "# 201 Created" },
-        { c: "#a78bfa", t: '{ "url": "https://cdn...", "size_bytes": 148392 }' },
+        { c: "#a78bfa", t: '{ "url": "https://cdn.nexiumai.io/<bucket>/<id>/<id>_photo.jpg", ... }' },
       ],
       upcoming: [
         {
