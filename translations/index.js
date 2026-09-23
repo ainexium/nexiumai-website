@@ -9,7 +9,9 @@ export const translations = {
     },
     hero: {
       eyebrow: "L'intelligence, au service du possible",
-      title: "Nous construisons le logiciel de demain.",
+      titlePrefix: "Nous construisons le",
+      titleWords: ["cloud", "numérique", "futur"],
+      titleSuffix: " de demain.",
       description: "NEXIUM.AI conçoit des produits SaaS et des solutions technologiques pour aider les entreprises à franchir le cap du numérique.",
       ctaPrimary: "Voir nos produits",
       ctaSecondary: "Nous contacter",
@@ -109,7 +111,9 @@ export const translations = {
     },
     hero: {
       eyebrow: "Intelligence, at the service of the possible",
-      title: "We build tomorrow's software.",
+      titlePrefix: "We build tomorrow's",
+      titleWords: ["cloud", "software", "future"],
+      titleSuffix: ".",
       description: "NEXIUM.AI designs SaaS products and technology solutions to help businesses embrace the digital shift.",
       ctaPrimary: "View our products",
       ctaSecondary: "Contact us",

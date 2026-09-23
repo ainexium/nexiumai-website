@@ -1,7 +1,40 @@
+import localFont from "next/font/local";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import "./globals.css";
+
+const roobert = localFont({
+  src: [
+    { path: "../public/fonts/RoobertTRIAL-Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/RoobertTRIAL-Medium.otf",  weight: "500", style: "normal" },
+    { path: "../public/fonts/RoobertTRIAL-SemiBold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/RoobertTRIAL-Bold.otf",    weight: "700", style: "normal" },
+  ],
+  variable: "--font-roobert",
+  display: "swap",
+});
+
+const pangram = localFont({
+  src: [
+    { path: "../public/fonts/Pangram-Light.otf",   weight: "300", style: "normal" },
+    { path: "../public/fonts/Pangram-Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Pangram-Medium.otf",  weight: "500", style: "normal" },
+    { path: "../public/fonts/Pangram-Bold.otf",    weight: "700", style: "normal" },
+  ],
+  variable: "--font-pangram",
+  display: "swap",
+});
+
+const roobertMono = localFont({
+  src: [
+    { path: "../public/fonts/RoobertMonoTRIAL-Regular.otf",  weight: "400", style: "normal" },
+    { path: "../public/fonts/RoobertMonoTRIAL-Medium.otf",   weight: "500", style: "normal" },
+    { path: "../public/fonts/RoobertMonoTRIAL-SemiBold.otf", weight: "600", style: "normal" },
+  ],
+  variable: "--font-roobert-mono",
+  display: "swap",
+});
 
 const SITE_URL = "https://nexiumai.io";
 
@@ -42,7 +75,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${roobert.variable} ${pangram.variable} ${roobertMono.variable}`}>
       <body>
         <ThemeProvider>
           <LanguageProvider>

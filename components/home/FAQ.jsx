@@ -25,7 +25,7 @@ export default function FAQ() {
           transition={{ duration: 0.5 }}
         >
           <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, color: "var(--accent)" }}>{f.eyebrow}</p>
-          <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 700, color: "var(--fg)", lineHeight: 1.15, letterSpacing: "-0.025em", margin: 0 }}>
+          <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 500, color: "var(--fg)", lineHeight: 1.15, letterSpacing: "-0.025em", margin: 0 }}>
             {f.title}
           </h2>
         </motion.div>

@@ -1,11 +1,53 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const h = t.hero;
+  const words = h.titleWords;
+
+  const [displayText, setDisplayText] = useState("");
+  const [wordIdx, setWordIdx] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [cursorOn, setCursorOn] = useState(true);
+
+  useEffect(() => {
+    setDisplayText("");
+    setWordIdx(0);
+    setIsDeleting(false);
+  }, [lang]);
+
+  useEffect(() => {
+    const word = words[wordIdx];
+    if (!word) return;
+
+    let delay;
+    if (!isDeleting) {
+      if (displayText.length < word.length) {
+        delay = setTimeout(() => setDisplayText(word.slice(0, displayText.length + 1)), 90);
+      } else {
+        delay = setTimeout(() => setIsDeleting(true), 2200);
+      }
+    } else {
+      if (displayText.length > 0) {
+        delay = setTimeout(() => setDisplayText(d => d.slice(0, -1)), 48);
+      } else {
+        delay = setTimeout(() => {
+          setIsDeleting(false);
+          setWordIdx(i => (i + 1) % words.length);
+        }, 250);
+      }
+    }
+    return () => clearTimeout(delay);
+  }, [displayText, isDeleting, wordIdx, words]);
+
+  useEffect(() => {
+    const id = setInterval(() => setCursorOn(c => !c), 530);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section
@@ -51,9 +93,28 @@ export default function Hero() {
               <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28, color: "var(--accent)" }}>
                 {h.eyebrow}
               </p>
-              <h1 className="hero-title" style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
-                {h.title}
+
+              <h1 className="hero-title" style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 500, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--fg)", maxWidth: 580, marginBottom: 20 }}>
+                {h.titlePrefix}{" "}
+                <span style={{ whiteSpace: "nowrap" }}>
+                  <span style={{ color: "var(--accent)" }}>
+                    {displayText}
+                  </span>
+                  <span style={{
+                    display: "inline-block",
+                    width: "22px",
+                    height: "1.15em",
+                    background: "linear-gradient(180deg, rgba(150, 150, 150, 0.28) 0%, rgba(150, 150, 150, 0.02) 100%)",
+                    marginLeft: "4px",
+                    verticalAlign: "middle",
+                    borderRadius: "2px",
+                    opacity: cursorOn ? 1 : 0,
+                    transition: "opacity 0.08s",
+                  }} />
+                </span>
+                {h.titleSuffix}
               </h1>
+
               <p style={{ fontSize: 15, maxWidth: 440, lineHeight: 1.65, color: "var(--fg-2)" }}>
                 {h.description}
               </p>
@@ -92,7 +153,7 @@ export default function Hero() {
               <div key={s.label} className={`hero-stat-${i}`}
                 style={{ padding: "24px 24px", borderRight: i < 3 ? "1px solid var(--border)" : "none" }}
               >
-                <p style={{ fontSize: 18, fontWeight: 700, color: "var(--fg)", margin: 0, letterSpacing: "-0.02em" }}>{s.value}</p>
+                <p style={{ fontSize: 18, fontWeight: 600, color: "var(--fg)", margin: 0, letterSpacing: "-0.02em" }}>{s.value}</p>
                 <p style={{ fontSize: 11, color: "var(--fg-3)", margin: "3px 0 0" }}>{s.label}</p>
               </div>
             ))}

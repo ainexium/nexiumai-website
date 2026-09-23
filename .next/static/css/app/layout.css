@@ -1,3 +1,109 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.jsx","import":"","arguments":[{"src":[{"path":"../public/fonts/RoobertTRIAL-Regular.otf","weight":"400","style":"normal"},{"path":"../public/fonts/RoobertTRIAL-Medium.otf","weight":"500","style":"normal"},{"path":"../public/fonts/RoobertTRIAL-SemiBold.otf","weight":"600","style":"normal"},{"path":"../public/fonts/RoobertTRIAL-Bold.otf","weight":"700","style":"normal"}],"variable":"--font-roobert","display":"swap"}],"variableName":"roobert"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: 'roobert';
+src: url(/_next/static/media/e717f2176a60f97a-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'roobert';
+src: url(/_next/static/media/1f43618828b4e276-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'roobert';
+src: url(/_next/static/media/42e56e732b93629f-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 600;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'roobert';
+src: url(/_next/static/media/a9a9e888b671f314-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 700;
+font-style: normal;
+}@font-face {font-family: 'roobert Fallback';src: local("Arial");ascent-override: 98.65%;descent-override: 23.84%;line-gap-override: 0.00%;size-adjust: 103.20%
+}.__className_bbf1bd {font-family: 'roobert', 'roobert Fallback'
+}.__variable_bbf1bd {--font-roobert: 'roobert', 'roobert Fallback'
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.jsx","import":"","arguments":[{"src":[{"path":"../public/fonts/Pangram-Light.otf","weight":"300","style":"normal"},{"path":"../public/fonts/Pangram-Regular.otf","weight":"400","style":"normal"},{"path":"../public/fonts/Pangram-Medium.otf","weight":"500","style":"normal"},{"path":"../public/fonts/Pangram-Bold.otf","weight":"700","style":"normal"}],"variable":"--font-pangram","display":"swap"}],"variableName":"pangram"} ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: 'pangram';
+src: url(/_next/static/media/558081c675ad45cd-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 300;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'pangram';
+src: url(/_next/static/media/0e6f27ca0d9f6ce1-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'pangram';
+src: url(/_next/static/media/62941cbdb9707204-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'pangram';
+src: url(/_next/static/media/1de6ea5e41b9c1cd-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 700;
+font-style: normal;
+}@font-face {font-family: 'pangram Fallback';src: local("Arial");ascent-override: 82.00%;descent-override: 19.44%;line-gap-override: 0.00%;size-adjust: 118.29%
+}.__className_d00b53 {font-family: 'pangram', 'pangram Fallback'
+}.__variable_d00b53 {--font-pangram: 'pangram', 'pangram Fallback'
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.jsx","import":"","arguments":[{"src":[{"path":"../public/fonts/RoobertMonoTRIAL-Regular.otf","weight":"400","style":"normal"},{"path":"../public/fonts/RoobertMonoTRIAL-Medium.otf","weight":"500","style":"normal"},{"path":"../public/fonts/RoobertMonoTRIAL-SemiBold.otf","weight":"600","style":"normal"}],"variable":"--font-roobert-mono","display":"swap"}],"variableName":"roobertMono"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: 'roobertMono';
+src: url(/_next/static/media/96379fe05e26fcf6-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'roobertMono';
+src: url(/_next/static/media/e496f313a5f2b43c-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'roobertMono';
+src: url(/_next/static/media/2995d3a5e819a7b1-s.p.otf) format('opentype');
+font-display: swap;
+font-weight: 600;
+font-style: normal;
+}@font-face {font-family: 'roobertMono Fallback';src: local("Arial");ascent-override: 73.75%;descent-override: 17.82%;line-gap-override: 0.00%;size-adjust: 138.04%
+}.__className_b7f66e {font-family: 'roobertMono', 'roobertMono Fallback'
+}.__variable_b7f66e {--font-roobert-mono: 'roobertMono', 'roobertMono Fallback'
+}
+
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
@@ -298,10 +404,16 @@ html[data-theme="dark"] {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-pangram), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roobert), var(--font-pangram), sans-serif;
+}
+code, pre, .font-mono {
+  font-family: var(--font-roobert-mono), "Courier New", monospace;
 }
 html[data-theme="light"] {
   --bg: #ffffff;

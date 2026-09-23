@@ -70,7 +70,7 @@ export default function Footer() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 18, color: "rgba(155,61,255,0.65)" }}>
               {f.cta.eyebrow}
             </p>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 700, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4.5vw, 2.8rem)", fontWeight: 500, color: "#fff", marginBottom: 14, letterSpacing: "-0.03em" }}>
               {f.cta.title}
             </h2>
             <p style={{ fontSize: 14, color: M, maxWidth: 380, marginBottom: 36, lineHeight: 1.6 }}>
@@ -105,7 +105,7 @@ export default function Footer() {
           <div className="footer-brand" style={{ padding: "40px 48px", borderRight: `1px solid ${B}` }}>
             <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 12 }}>
               <img src="/assets/logo-icon.png" alt="NEXIUM.AI" width={24} height={24} />
-              <span style={{ fontSize: 13, fontWeight: 700, color: "#fff", letterSpacing: "-0.01em" }}>NEXIUM.AI</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em" }}>NEXIUM.AI</span>
             </div>
             <p style={{ fontSize: 12, marginBottom: 20, color: F, lineHeight: 1.55 }}>{f.tagline}</p>
             <div style={{ display: "flex", gap: 7 }}>
