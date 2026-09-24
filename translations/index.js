@@ -32,6 +32,11 @@ export const translations = {
         { title: "Chatbots & Assistants", text: "Agents conversationnels pour le support client, la qualification de leads ou les processus internes 24h/24." },
       ],
     },
+    stack: {
+      eyebrow: "Quelle que soit votre stack",
+      title: "Votre stack. Nos solutions.",
+      link: "Voir nos produits →",
+    },
     product: {
       eyebrow: "Produits",
       title: "Ce qu'on construit.",
@@ -133,6 +138,11 @@ export const translations = {
         { title: "Software Development", text: "Web apps, APIs, internal tools. Maintainable, tested and deployed code — not mockups." },
         { title: "Chatbots & Assistants", text: "Conversational agents for customer support, lead qualification or internal processes 24/7." },
       ],
+    },
+    stack: {
+      eyebrow: "Whatever your stack",
+      title: "Your stack. Our solutions.",
+      link: "View our products →",
     },
     product: {
       eyebrow: "Products",

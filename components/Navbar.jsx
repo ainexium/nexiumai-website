@@ -32,9 +32,8 @@ export default function Navbar() {
         <div style={{ alignItems: "center", gap: 32 }} className="nav-desktop hidden md:flex">
           {links.map((l) => (
             <a key={l.href} href={l.href}
-              style={{ fontSize: 14, fontWeight: 400, color: "var(--fg-2)", transition: "color 0.15s", textDecoration: "none" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
+              className="nav-link-slide"
+              style={{ fontSize: 14, fontWeight: 400, textDecoration: "none" }}
             >
               {l.label}
             </a>
@@ -43,9 +42,8 @@ export default function Navbar() {
 
         <div style={{ alignItems: "center", gap: 10 }} className="nav-desktop hidden md:flex">
           <a href="mailto:ai.nexium@gmail.com"
-            style={{ fontSize: 14, fontWeight: 400, color: "var(--fg-2)", textDecoration: "none", transition: "color 0.15s" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
+            className="nav-link-slide"
+            style={{ fontSize: 14, fontWeight: 400, textDecoration: "none" }}
           >
             {n.contact}
           </a>

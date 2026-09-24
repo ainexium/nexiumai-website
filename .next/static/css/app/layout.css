@@ -443,6 +443,30 @@ html[data-theme="light"] {
   pointer-events: none;
   z-index: 0;
 }
+.nav-link-slide {
+  position: relative;
+  overflow: hidden;
+  color: var(--fg-2);
+  padding: 4px 10px;
+  border-radius: 5px;
+  transition: color 0.35s ease;
+  z-index: 0;
+}
+.nav-link-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 -2px;
+  background: var(--accent);
+  transform: translateX(calc(-100% - 2px));
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+.nav-link-slide:hover::before {
+  transform: translateX(0);
+}
+.nav-link-slide:hover {
+  color: #fff;
+}
 .btn-slide-fill {
   background: linear-gradient(to right, var(--accent) 50%, var(--fg) 50%);
   background-size: 200% 100%;
@@ -542,6 +566,46 @@ html[data-theme="light"] {
   color: #fff;
   border-color: var(--accent);
 }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+  will-change: transform;
+}
+.marquee-track {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.marquee-track:hover .animate-marquee,
+.marquee-track:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+.glow-stack {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 60% 130% at 100% 50%, var(--glow-primary) 0%, transparent 65%),
+    linear-gradient(to left, var(--glow-secondary) 0%, transparent 60%);
+}
 .dark-grid-overlay {
   position: absolute;
   inset: 0;
@@ -606,6 +670,25 @@ html[data-theme="light"] {
   }
   .product-sdk {
     padding: 14px 20px !important;
+  }
+  .stack-outer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    gap: 28px !important;
+  }
+  .stack-marquee {
+    width: 100vw !important;
+    margin-left: -20px !important;
+  }
+  .stack-tile {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .stack-tile svg {
+    width: 24px !important;
+    height: 24px !important;
   }
   .faq-sidebar {
     display: none !important;
@@ -718,12 +801,12 @@ html[data-theme="dark"] {
     font-size: clamp(2.2rem, 4vw, 3rem) !important;
   }
   .expertise-icon-wrap {
-    width: 46px !important;
-    height: 46px !important;
+    width: 64px !important;
+    height: 64px !important;
   }
   .expertise-icon {
-    width: 24px !important;
-    height: 24px !important;
+    width: 36px !important;
+    height: 36px !important;
   }
   .expertise-card h3 {
     font-size: 15px !important;
