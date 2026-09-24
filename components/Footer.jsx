@@ -47,10 +47,10 @@ export default function Footer() {
   ];
 
   const products = [
-    { label: "NEXIUM Storage", href: "https://console.nexiumai.io" },
-    { label: "Documentation", href: "https://console.nexiumai.io/docs" },
-    { label: "SDK JavaScript", href: "https://www.npmjs.com/package/@ainexium/storage" },
-    { label: "SDK Python", href: "https://pypi.org/project/nexium-storage/" },
+    { label: "NEXIUM Storage", href: "https://console.nexiumai.io", external: true },
+    { label: "Documentation", href: "https://console.nexiumai.io/docs", external: true },
+    { label: "SDK JavaScript", href: "https://www.npmjs.com/package/@ainexium/storage", external: true },
+    { label: "SDK Python", href: "https://pypi.org/project/nexium-storage/", external: true },
   ];
 
   return (
