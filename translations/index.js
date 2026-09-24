@@ -5,7 +5,7 @@ export const translations = {
       products: "Produits",
       faq: "FAQ",
       contact: "Contact",
-      cta: "Commencer gratuitement →",
+      cta: "Commencer →",
     },
     hero: {
       eyebrow: "L'intelligence, au service du possible",
